@@ -8,7 +8,10 @@
 </head>
 <body>
 <header class="header">
-  <a class="brand" href="#home"><span class="bolt">⚡</span><span>TEJAS<small>ELECTRICALS</small></span></a>
+  <a class="brand" href="#home">
+  <img src="images/logo.png" class="logo" alt="Tejas Electricals">
+  <span>TEJAS<small>ELECTRICALS</small></span>
+</a>
   <nav>
     <a class="active" href="#home">Home</a>
     <a href="#about">About Us</a>
@@ -17,10 +20,11 @@
     <a href="#why">Why Choose Us</a>
     <a href="#contact">Contact Us</a>
   </nav>
-  <div class="phones">
-    <a href="tel:+919370974655">☎ 9370974655</a>
-    <a href="tel:+918208829028">☎ 8208829028</a>
-  </div>
+<div class="phone-numbers">
+  <a href="tel:9370974655">☎️9370974655</a>
+  <a href="tel:8208892028">☎️8208892028</a>
+</div>
+ 
 </header>
 
 <section id="home" class="hero">
@@ -124,8 +128,111 @@
 
 <footer>© 2026 Tejas Electricals • All Rights Reserved</footer>
 
+<div id="zoomBox">
+  <button onclick="closeZoom()">×</button>
+  <img id="zoomImg">
+</div>
 
+<script>
+const photos = Array.from(document.querySelectorAll(".gallery-grid img"));
+let current = 0;
+let zoom = 1;
+let startX = 0;
+let startDistance = 0;
+let photoOpen = false;
 
+const zoomBox = document.getElementById("zoomBox");
+const zoomImg = document.getElementById("zoomImg");
+
+function showPhoto(index) {
+  current = index;
+  zoom = 1;
+  zoomImg.src = photos[current].src;
+  zoomImg.style.transform = "scale(1)";
+  zoomBox.style.display = "flex";
+  photoOpen = true;
+
+  history.pushState({ photo: true }, "");
+}
+
+photos.forEach(function(img, index) {
+  img.onclick = function() {
+    showPhoto(index);
+  };
+});
+
+/* Mobile Back button */
+window.addEventListener("popstate", function() {
+  if (photoOpen) {
+    zoomBox.style.display = "none";
+    photoOpen = false;
+    zoom = 1;
+  }
+});
+
+/* Swipe left/right */
+zoomImg.addEventListener("touchstart", function(e) {
+  if (e.touches.length === 1) {
+    startX = e.touches[0].clientX;
+  }
+
+  if (e.touches.length === 2) {
+    startDistance = Math.hypot(
+      e.touches[0].clientX - e.touches[1].clientX,
+      e.touches[0].clientY - e.touches[1].clientY
+    );
+  }
+});
+
+zoomImg.addEventListener("touchend", function(e) {
+  if (e.changedTouches.length === 1 && zoom <= 1) {
+    let endX = e.changedTouches[0].clientX;
+    let difference = startX - endX;
+
+    if (difference > 60) {
+      current = (current + 1) % photos.length;
+      showPhoto(current);
+    }
+
+    if (difference < -60) {
+      current = (current - 1 + photos.length) % photos.length;
+      showPhoto(current);
+    }
+  }
+});
+
+/* Pinch zoom */
+zoomImg.addEventListener("touchmove", function(e) {
+  if (e.touches.length === 2) {
+    e.preventDefault();
+
+    let distance = Math.hypot(
+      e.touches[0].clientX - e.touches[1].clientX,
+      e.touches[0].clientY - e.touches[1].clientY
+    );
+
+    if (distance > startDistance) {
+      zoom += 0.10;
+    } else {
+      zoom -= 0.10;
+    }
+
+    zoom = Math.max(1, Math.min(4, zoom));
+    zoomImg.style.transform = "scale(" + zoom + ")";
+    startDistance = distance;
+  }
+}, { passive: false });
+
+function closeZoom() {
+  zoomBox.style.display = "none";
+  photoOpen = false;
+  zoom = 1;
+
+  if (history.state && history.state.photo) {
+    history.back();
+  }
+}
+</script>
 
 
 </body>
