@@ -128,28 +128,3 @@
 
 /* photo zoom ke liye */
 
-#zoomBox {
-  display: none;
-  position: fixed;
-  inset: 0;
-  background: #000;
-  z-index: 99999;
-  justify-content: center;
-  align-items: center;
-}
-
-#zoomImg {
-  width: 80%;
-  max-height: 75%;
-  object-fit: contain;
-}
-
-#zoomBox button {
-  position: absolute;
-  top: 10px;
-  right: 15px;
-  font-size: 35px;
-  color: white;
-  background: none;
-  border: none;
-}
