@@ -124,23 +124,6 @@
 
 <footer>© 2026 Tejas Electricals • All Rights Reserved</footer>
 
-<div id="zoomBox">
-  <button onclick="closeZoom()">×</button>
-  <img id="zoomImg">
-</div>
-
-<script>
-document.querySelectorAll(".gallery-grid img").forEach(function(img) {
-  img.onclick = function() {
-    document.getElementById("zoomImg").src = this.src;
-    document.getElementById("zoomBox").style.display = "flex";
-  };
-});
-
-function closeZoom() {
-  document.getElementById("zoomBox").style.display = "none";
-}
-</script>
 
 
 
