@@ -64,19 +64,52 @@
   <div>👍 <b>100%<br>SATISFACTION</b></div>
 </section>
 
-<section id="about" class="info"><h2>ABOUT US</h2><p>Tejas Electricals provides reliable electrical work with a focus on safety, quality and customer satisfaction.</p></section>
+<section id="about" class="info"><h1>ABOUT US</h1><p>Tejas Electricals provides reliable electrical work with a focus on safety, quality and customer satisfaction.</p></section>
 
-<section id="gallery" class="section gallery"><div class="section-title"><span>⚡</span><h2>OUR GALLERY</h2></div>
+<section id="gallery" class="section gallery"><div class="section-title"><span>⚡</span><h1>Light Fiting Gallery</h1></div>
 <div class="gallery-grid">
+
+
 
 <img src="images/building-1.jpg" alt="Building electrical work">
 <img src="images/ceiling-1.jpg" alt="Ceiling wiring">
 <img src="images/ceiling-2.jpg" alt="Ceiling electrical work">
 <img src="images/electrical-wiring.jpg" alt="Electrical wiring">
-<img src="images/motor-rewinding.jpg" alt="Motor rewinding">
+<img src="images/1f.jpg" alt="Building electrical work">
+<img src="images/2f.jpg" alt="Building electrical work">
+<img src="images/3f.jpg" alt="Building electrical work">
+<img src="images/4f.jpg" alt="Building electrical work">
+<img src="images/5f.jpg" alt="Building electrical work">
+<img src="images/6f.jpg" alt="Building electrical work">
+<img src="images/7f.jpg" alt="Building electrical work">
+<img src="images/8f.jpg" alt="Building electrical work">
+<img src="images/9f.jpg" alt="Building electrical work">
+<img src="images/10f.jpg" alt="Building electrical work">
+<img src="images/11f.jpg" alt="Building electrical work">
+<img src="images/12f.jpg" alt="Building electrical work">
+<img src="images/13f.jpg" alt="Building electrical work">
+<img src="images/14f.jpg" alt="Building electrical work">
+<img src="images/16f.jpg" alt="Building electrical work">
 <img src="images/slab-wiring-1.jpg" alt="Slab wiring">
 <img src="images/slab-wiring-2.jpg" alt="Slab wiring">
+
 </div></section>
+
+
+
+<section id="gallery" class="section gallery"><div class="section-title"><span>⚡</span><h1>MOTOR REWINDING Gallery</h1></div>
+<div class="gallery-grid">
+
+
+<img src="images/1m.jpg" alt="Motor rewinding">
+<img src="images/2m.jpg" alt="Motor rewinding">
+<img src="images/3m.jpg" alt="Motor rewinding">
+<img src="images/4m.jpg" alt="Motor rewinding">
+<img src="images/5m.jpg" alt="Motor rewinding">
+<img src="images/motor-rewinding.jpg" alt="Motor rewinding">
+
+</div></section>
+
 
 <section id="why" class="info"><h2>WHY CHOOSE US</h2><p>Safe work • Best quality • Expert technicians • Fast & reliable service • 100% satisfaction</p></section>
 
@@ -90,5 +123,28 @@
 </div></section>
 
 <footer>© 2026 Tejas Electricals • All Rights Reserved</footer>
+
+<div id="zoomBox">
+  <button onclick="closeZoom()">×</button>
+  <img id="zoomImg">
+</div>
+
+<script>
+document.querySelectorAll(".gallery-grid img").forEach(function(img) {
+  img.onclick = function() {
+    document.getElementById("zoomImg").src = this.src;
+    document.getElementById("zoomBox").style.display = "flex";
+  };
+});
+
+function closeZoom() {
+  document.getElementById("zoomBox").style.display = "none";
+}
+</script>
+
+
+
+
 </body>
 </html>
+
