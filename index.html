@@ -13,18 +13,19 @@
   <span>TEJAS<small>ELECTRICALS</small></span>
 </a>
   <nav>
-    <a class="active" href="#home">Home</a>
-    <a href="#about">About Us</a>
+    <a href="#home">Home</a>
     <a href="#services">Services</a>
     <a href="#gallery">Gallery</a>
-    <a href="#why">Why Choose Us</a>
     <a href="#contact">Contact Us</a>
   </nav>
+    
+ 
 <div class="phone-numbers">
   <a href="tel:9370974655">☎️9370974655</a>
   <a href="tel:8208892028">☎️8208892028</a>
 </div>
- 
+
+
 </header>
 
 <section id="home" class="hero">
@@ -42,7 +43,7 @@
   <div class="call-card">
     <h3>CALL US NOW</h3>
     <div class="contact-row"><b>Swapnil Pawara</b><a class="number" href="tel:+919370974655">9370974655</a></div>
-    <div class="contact-row"><b>Dhiraj Pawara</b><a class="number" href="tel:+918208829028">8208829028</a></div>
+    <div class="contact-row"><b>Dhiru Pawara</b><a class="number" href="tel:+918208829028">8208829028</a></div>
     <p>📍 At Kundane, Post Warkhedi,<br>Tal. & Dist. Dhule - 424301</p>
   </div>
 </section>
@@ -68,12 +69,10 @@
   <div>👍 <b>100%<br>SATISFACTION</b></div>
 </section>
 
-<section id="about" class="info"><h1>ABOUT US</h1><p>Tejas Electricals provides reliable electrical work with a focus on safety, quality and customer satisfaction.</p></section>
 
-<section id="gallery" class="section gallery"><div class="section-title"><span>⚡</span><h1>Light Fiting Gallery</h1></div>
+
+<section id="gallery" class="section gallery"><div class="section-title"><span>⚡</span><h1>LIGHT FITING GALLERY</h1></div>
 <div class="gallery-grid">
-
-
 
 <img src="images/building-1.jpg" alt="Building electrical work">
 <img src="images/ceiling-1.jpg" alt="Ceiling wiring">
@@ -99,11 +98,8 @@
 
 </div></section>
 
-
-
-<section id="gallery" class="section gallery"><div class="section-title"><span>⚡</span><h1>MOTOR REWINDING Gallery</h1></div>
+<section id="gallery" class="section gallery"><div class="section-title"><span>⚡</span><h1>MOTOR REWINDING GALLERY</h1></div>
 <div class="gallery-grid">
-
 
 <img src="images/1m.jpg" alt="Motor rewinding">
 <img src="images/2m.jpg" alt="Motor rewinding">
@@ -115,8 +111,7 @@
 </div></section>
 
 
-<section id="why" class="info"><h2>WHY CHOOSE US</h2><p>Safe work • Best quality • Expert technicians • Fast & reliable service • 100% satisfaction</p></section>
-
+<section id="about" class="info"><h1>ABOUT US</h1><p>Tejas Electricals provides reliable electrical work with a focus on safety, quality and customer satisfaction.</p></section>
 <section id="contact" class="contact"><h2>CONTACT US</h2>
 <p>Call or WhatsApp us for electrical service.</p>
 <div class="contact-buttons">
@@ -125,6 +120,22 @@
 <a class="btn primary" href="tel:+918208829028">📞 Call 8208829028</a>
 <a class="btn whatsapp" href="https://wa.me/918208829028?text=Hello%20Tejas%20Electricals,%20I%20need%20electrical%20service." target="_blank">💬 WhatsApp Message</a>
 </div></section>
+
+<!-- instagram id ke liye hai -->
+
+<section class="instagram">
+  <h2>FOLLOW US ON INSTAGRAM</h2>
+
+  <div class="instagram-links">
+  
+  <a href="https://www.instagram.com/swapnil_pawara_001/" target="_blank">
+      📷 Swapnil Pawara
+  </a>
+    <a href="https://www.instagram.com/_.dhiru._16/" target="_blank">
+      📷 Dhiru Pawara
+    </a>
+  </div>
+</section>
 
 <footer>© 2026 Tejas Electricals • All Rights Reserved</footer>
 
@@ -170,7 +181,8 @@ window.addEventListener("popstate", function() {
   }
 });
 
-/* Swipe left/right */
+/* yah images Swipe left/right karne ka hai */
+
 zoomImg.addEventListener("touchstart", function(e) {
   if (e.touches.length === 1) {
     startX = e.touches[0].clientX;
@@ -201,7 +213,8 @@ zoomImg.addEventListener("touchend", function(e) {
   }
 });
 
-/* Pinch zoom */
+/* Yah images zoom karne ka hai  */
+
 zoomImg.addEventListener("touchmove", function(e) {
   if (e.touches.length === 2) {
     e.preventDefault();
@@ -234,6 +247,18 @@ function closeZoom() {
 }
 </script>
 
+<!-- ===== Yah click orange color ka hai ===== -->
+
+<script>
+const menuLinks = document.querySelectorAll("nav a");
+
+menuLinks.forEach(link => {
+  link.addEventListener("click", function() {
+    menuLinks.forEach(item => item.classList.remove("active"));
+    this.classList.add("active");
+  });
+});
+</script>
 
 </body>
 </html>
